@@ -1,0 +1,17 @@
+/node_modules
+/mongodb
+.vscode
+.env
+/public/uploads/documents/*
+/public/uploads/images/client/*
+/public/uploads/images/project/*
+/public/uploads/images/*
+/public/uploads/discussions/*
+/public/uploads/templates/logo/*
+/public/uploads/logoImages/*
+/public/uploads/template/*
+/public/uploads/clientImages/*
+/public/uploads/project/*
+src/db/seed.js/*
+src/db/seed-data.js/*
+/public/uploads/videos/*

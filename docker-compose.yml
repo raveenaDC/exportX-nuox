@@ -1,0 +1,33 @@
+version: '3'
+services:
+  node:
+    build:
+      context: ./docker/node
+      dockerfile: Dockerfile
+    image: exportx/node
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/home
+    networks:
+      - exportx
+    command: ['npm', 'run', 'serve']
+
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: 'exportx'
+    volumes:
+      - ./mongodb:/data/db
+    networks:
+      - exportx
+
+networks:
+  exportx:
+    driver: 'bridge'
+
+volumes:
+  mongodb:
+    driver: 'local'
